@@ -44,19 +44,19 @@ class Settings {
 
 		//判断本地选项是否jsdelivr地址，如果是则判断是否最新地址
 		$addresResult = preg_match('/cdn\.jsdelivr\.net/i',$addres);
-		if ( $addresResult && $addres !== $SSL . '//cdn.jsdelivr.net/wp/wp-editormd/tags/' . WP_EDITORMD_VER  ) {
-			$option['editor_addres'] = $SSL . '//cdn.jsdelivr.net/wp/wp-editormd/tags/' . WP_EDITORMD_VER;
+		if ( $addresResult && $addres !== $SSL . '//cdn.jsdelivr.net/gh/spirit1431007/cdn@1.56/wp-editormd'  ) {
+			$option['editor_addres'] = $SSL . '//cdn.jsdelivr.net/gh/spirit1431007/cdn@1.56/wp-editormd';
 			update_option('editor_style',$option);
 		}
 		//如果空值填入最新CDN地址 - 编辑器静态地址
 		if ( $this->get_option('editor_addres', 'editor_style') === '' ) {
-			$option['editor_addres'] = $SSL . '//cdn.jsdelivr.net/wp/wp-editormd/tags/' . WP_EDITORMD_VER;
+			$option['editor_addres'] = $SSL . '//cdn.jsdelivr.net/gh/spirit1431007/cdn@1.56/wp-editormd';
 			update_option('editor_style',$option);
         }
 
 		//如果空值填入最新CDN地址 - 思维导图
 		if ( $this->get_option('customize_mindmap', 'editor_mindmap') === '' ) {
-			$option['customize_mindmap'] = $SSL . '//cdn.jsdelivr.net/wp/wp-editormd/tags/' . WP_EDITORMD_VER .'/assets/MindMap/mindMap.min.js';
+			$option['customize_mindmap'] = $SSL . '//cdn.jsdelivr.net/gh/spirit1431007/cdn@1.56/wp-editormd/assets/MindMap/mindMap.min.js';
 			update_option('editor_mindmap',$option);
 		}
 
@@ -515,7 +515,7 @@ class Settings {
 					'name'    => 'customize_mindmap',
 					'label'   => __( 'Customize MindMap Library', $this->text_domain ),
 					'type'    => 'text',
-                    'default' => '//cdn.jsdelivr.net/wp/wp-editormd/tags/' . WP_EDITORMD_VER .'/assets/MindMap/mindMap.min.js'
+                    'default' => '//cdn.jsdelivr.net/gh/spirit1431007/cdn@1.56/wp-editormd/assets/MindMap/mindMap.min.js'
 				),
             ),
 			'editor_advanced'     => array(
